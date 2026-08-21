@@ -1,50 +1,65 @@
-# Welcome to your Expo app 👋
+# Quiz de Dinossauros
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+### Curso Técnico de Desenvolvimento de Sistemas - Senai Itapeva
 
-## Get started
+**Descrição:**
 
-1. Install dependencies
+O **Quiz de Dinossauros** é um aplicativo desenvolvido com **React Native** com o objetivo de testar e ampliar os conhecimentos dos usuários sobre dinossauros de forma divertida e interativa.
 
-   ```bash
-   npm install
-   ```
+O aplicativo apresenta perguntas com diferentes alternativas de resposta. O usuário seleciona uma opção e, ao final do quiz, pode acompanhar sua **pontuação**, tornando a experiência mais dinâmica e educativa.
 
-2. Start the app
+## Índice
 
-   ```bash
-   npx expo start
-   ```
+* Funcionalidades
+* Tecnologias Utilizadas
+* Estrutura do Projeto
+* Autores
+* Licença
 
-In the output, you'll find options to open the app in a
+## Funcionalidades
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+* Exibir perguntas sobre dinossauros.
+* Apresentar diferentes alternativas para cada pergunta.
+* Permitir que o usuário selecione uma resposta.
+* Verificar se a resposta selecionada está correta.
+* Contabilizar a pontuação do usuário.
+* Avançar para a próxima pergunta.
+* Desabilitar as alternativas após uma resposta ser selecionada.
+* Armazenar as perguntas e respostas em um arquivo JSON.
+* Exibir o resultado do quiz ao final.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Tecnologias Utilizadas
 
-## Get a fresh project
+* **Linguagem/Frameworks:**
 
-When you're ready, run:
+  * React Native
+  * TypeScript
+  * Expo
+  * JavaScript/TypeScript
+  * JSON
 
-```bash
-npm run reset-project
-```
+* **Bibliotecas:**
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+  * React
+  * React Native
+  * Expo Router
 
-## Learn more
+## Estrutura do Projeto
 
-To learn more about developing your project with Expo, look at the following resources:
+O projeto possui uma estrutura organizada para facilitar o desenvolvimento e a manutenção do aplicativo.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+* `components/` — contém os componentes utilizados no aplicativo.
+* `QuizScreen.tsx` — responsável pela tela principal do quiz.
+* `questions.json` — contém as perguntas, alternativas e respostas corretas.
+* `app/` — contém as telas e rotas da aplicação.
+* `assets/` — contém imagens e outros recursos utilizados no projeto.
 
-## Join the community
+## Autores
 
-Join our community of developers creating universal apps.
+Projeto desenvolvido pelos alunos do **Curso Técnico de Desenvolvimento de Sistemas - Senai Itapeva**.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+* **Maria Júllia Schimidt Ott Prestes** — GitHub: [mariajschimidt] — [maria.prestes.senai@gmail.com]
+
+## Licença
+
+Este projeto está licenciado sob a **Licença MIT** - veja o arquivo `LICENSE` para mais detalhes.

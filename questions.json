@@ -348,5 +348,85 @@
       "Meteorologista"
     ],
     "correctAnswer": "Paleontólogo"
+  },
+  {
+    "question": "Qual dinossauro é conhecido por ter uma garra grande em forma de foice em cada pé, usada para caçar?",
+    "options": [
+      "Velociraptor",
+      "Triceratops",
+      "Diplodocus",
+      "Ankylosaurus"
+    ],
+    "correctAnswer": "Velociraptor"
+  },
+  {
+    "question": "Qual destes dinossauros possuía uma cauda pesada em forma de maça (clava) para se defender de predadores?",
+    "options": [
+      "Ankylosaurus",
+      "Stegosaurus",
+      "Spinosaurus",
+      "Brachiosaurus"
+    ],
+    "correctAnswer": "Ankylosaurus"
+  },
+  {
+    "question": "O Spinosaurus é famoso por qual caraterística física marcante nas suas costas?",
+    "options": [
+      "Uma grande vela ou crista dorsal sustentada por espinhas ósseas",
+      "Placas duplas em forma de losango",
+      "Uma carapaça espessa de placas sobrepostas",
+      "Dois grandes cornos voltados para a frente"
+    ],
+    "correctAnswer": "Uma grande vela ou crista dorsal sustentada por espinhas ósseas"
+  },
+  {
+    "question": "Qual era a principal dieta do Brachiosaurus?",
+    "options": [
+      "Plantas e folhas de árvores altas (herbívoro)",
+      "Carne de outros dinossauros (carnívoro)",
+      "Peixes e anfíbios (piscívoro)",
+      "Insetos e frutos pequenos (onívoro)"
+    ],
+    "correctAnswer": "Plantas e folhas de árvores altas (herbívoro)"
+  },
+  {
+    "question": "Qual dinossauro tinha um crânio extremamente espesso em forma de domo, usado possivelmente em combates de cabeçadas?",
+    "options": [
+      "Pachycephalosaurus",
+      "Parasaurolophus",
+      "Iguanodon",
+      "Carnotaurus"
+    ],
+    "correctAnswer": "Pachycephalosaurus"
+  },
+  {
+    "question": "O Carnotaurus é facilmente reconhecido por qual destas caraterísticas?",
+    "options": [
+      "Dois cornos pequenos acima dos olhos e braços extremamente reduzidos",
+      "Uma crista tubular longa na parte de trás da cabeça",
+      "Um bico de pato e centenas de dentes molares",
+      "Uma gola óssea gigante com três cornos no focinho"
+    ],
+    "correctAnswer": "Dois cornos pequenos acima dos olhos e braços extremamente reduzidos"
+  },
+  {
+    "question": "Em qual período geológico viveu o famoso Tyrannosaurus rex?",
+    "options": [
+      "Cretácico",
+      "Jurássico",
+      "Triásico",
+      "Permiano"
+    ],
+    "correctAnswer": "Cretácico"
+  },
+  {
+    "question": "Qual foi um dos primeiros dinossauros descobertos e identificados com um polegar cónico pontiagudo?",
+    "options": [
+      "Iguanodon",
+      "Allosaurus",
+      "Compsognathus",
+      "Deinonychus"
+    ],
+    "correctAnswer": "Iguanodon"
   }
 ]
