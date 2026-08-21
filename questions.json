@@ -1,0 +1,352 @@
+[
+  {
+    "question": "Qual dinossauro é conhecido como o 'Rei dos Dinossauros'?",
+    "options": [
+      "Velociraptor",
+      "Triceratops",
+      "Tyrannosaurus rex",
+      "Estegossauro"
+    ],
+    "correctAnswer": "Tyrannosaurus rex"
+  },
+  {
+    "question": "Qual dinossauro possuía três grandes chifres no rosto?",
+    "options": [
+      "Braquiossauro",
+      "Anquilossauro",
+      "Triceratops",
+      "Espinossauro"
+    ],
+    "correctAnswer": "Triceratops"
+  },
+  {
+    "question": "Qual destes dinossauros era herbívoro?",
+    "options": [
+      "Tyrannosaurus rex",
+      "Velociraptor",
+      "Espinossauro",
+      "Estegossauro"
+    ],
+    "correctAnswer": "Estegossauro"
+  },
+  {
+    "question": "Qual dinossauro era famoso pelas placas em suas costas?",
+    "options": [
+      "Carnotauro",
+      "Estegossauro",
+      "Triceratops",
+      "Braquiossauro"
+    ],
+    "correctAnswer": "Estegossauro"
+  },
+  {
+    "question": "Qual era um dos maiores dinossauros carnívoros conhecidos?",
+    "options": [
+      "Diplodoco",
+      "Triceratops",
+      "Braquiossauro",
+      "Espinossauro"
+    ],
+    "correctAnswer": "Espinossauro"
+  },
+  {
+    "question": "Em qual era geológica viveram os dinossauros?",
+    "options": [
+      "Cenozoica",
+      "Paleozoica",
+      "Mesozoica",
+      "Era do Gelo"
+    ],
+    "correctAnswer": "Mesozoica"
+  },
+  {
+    "question": "O Velociraptor era conhecido por ser:",
+    "options": [
+      "Muito lento",
+      "Gigante e herbívoro",
+      "Pequeno, rápido e inteligente",
+      "Aquático"
+    ],
+    "correctAnswer": "Pequeno, rápido e inteligente"
+  },
+  {
+    "question": "Qual dinossauro possuía uma cauda com uma grande clava para se defender?",
+    "options": [
+      "Braquiossauro",
+      "Anquilossauro",
+      "Triceratops",
+      "Espinossauro"
+    ],
+    "correctAnswer": "Anquilossauro"
+  },
+  {
+    "question": "Qual evento é apontado como a principal causa da extinção dos dinossauros não aviários?",
+    "options": [
+      "Uma grande seca",
+      "Uma epidemia",
+      "O impacto de um asteroide",
+      "Uma enchente"
+    ],
+    "correctAnswer": "O impacto de um asteroide"
+  },
+  {
+    "question": "Há aproximadamente quantos milhões de anos surgiram os primeiros dinossauros?",
+    "options": [
+      "65 milhões de anos",
+      "100 milhões de anos",
+      "230 milhões de anos",
+      "500 milhões de anos"
+    ],
+    "correctAnswer": "230 milhões de anos"
+  },
+  {
+    "question": "Qual destes dinossauros podia atingir uma altura semelhante à de um prédio de quatro andares?",
+    "options": [
+      "Braquiossauro",
+      "Velociraptor",
+      "Anquilossauro",
+      "Carnotauro"
+    ],
+    "correctAnswer": "Braquiossauro"
+  },
+  {
+    "question": "Qual dinossauro era famoso por possuir um longo pescoço?",
+    "options": [
+      "Braquiossauro",
+      "Tyrannosaurus rex",
+      "Velociraptor",
+      "Triceratops"
+    ],
+    "correctAnswer": "Braquiossauro"
+  },
+  {
+    "question": "Qual destes dinossauros era carnívoro?",
+    "options": [
+      "Diplodoco",
+      "Triceratops",
+      "Velociraptor",
+      "Estegossauro"
+    ],
+    "correctAnswer": "Velociraptor"
+  },
+  {
+    "question": "Os fósseis dos dinossauros são encontrados principalmente em:",
+    "options": [
+      "Rochas sedimentares",
+      "Rochas vulcânicas",
+      "Gelo",
+      "Madeira"
+    ],
+    "correctAnswer": "Rochas sedimentares"
+  },
+  {
+    "question": "Os cientistas que estudam os dinossauros são chamados de:",
+    "options": [
+      "Arqueólogos",
+      "Biólogos",
+      "Paleontólogos",
+      "Geógrafos"
+    ],
+    "correctAnswer": "Paleontólogos"
+  },
+  {
+    "question": "Qual dinossauro possuía uma grande vela nas costas?",
+    "options": [
+      "Espinossauro",
+      "Triceratops",
+      "Braquiossauro",
+      "Estegossauro"
+    ],
+    "correctAnswer": "Espinossauro"
+  },
+  {
+    "question": "Qual destes dinossauros era herbívoro?",
+    "options": [
+      "Anquilossauro",
+      "Velociraptor",
+      "Tyrannosaurus rex",
+      "Carnotauro"
+    ],
+    "correctAnswer": "Anquilossauro"
+  },
+  {
+    "question": "Qual dinossauro possuía um longo pescoço para alcançar folhas altas?",
+    "options": [
+      "Braquiossauro",
+      "Velociraptor",
+      "Carnotauro",
+      "Anquilossauro"
+    ],
+    "correctAnswer": "Braquiossauro"
+  },
+  {
+    "question": "Qual dinossauro era famoso por seus braços muito curtos?",
+    "options": [
+      "Tyrannosaurus rex",
+      "Espinossauro",
+      "Triceratops",
+      "Estegossauro"
+    ],
+    "correctAnswer": "Tyrannosaurus rex"
+  },
+  {
+    "question": "Qual destes animais viveu na mesma época dos dinossauros?",
+    "options": [
+      "Mamutes",
+      "Pterossauros",
+      "Tigres-dentes-de-sabre",
+      "Humanos"
+    ],
+    "correctAnswer": "Pterossauros"
+  },
+  {
+    "question": "Qual era a principal alimentação do Triceratops?",
+    "options": [
+      "Insetos",
+      "Carne",
+      "Plantas",
+      "Peixes"
+    ],
+    "correctAnswer": "Plantas"
+  },
+  {
+    "question": "Como se chamam os restos preservados de dinossauros encontrados nas rochas?",
+    "options": [
+      "Minerais",
+      "Fósseis",
+      "Cristais",
+      "Pegadas"
+    ],
+    "correctAnswer": "Fósseis"
+  },
+  {
+    "question": "Qual destes dinossauros tinha um bico parecido com o de um pato?",
+    "options": [
+      "Parasaurolophus",
+      "Velociraptor",
+      "Carnotauro",
+      "Espinossauro"
+    ],
+    "correctAnswer": "Parasaurolophus"
+  },
+  {
+    "question": "Qual dinossauro tinha um enorme chifre no nariz e dois acima dos olhos?",
+    "options": [
+      "Triceratops",
+      "Estegossauro",
+      "Diplodoco",
+      "Anquilossauro"
+    ],
+    "correctAnswer": "Triceratops"
+  },
+  {
+    "question": "Qual destes dinossauros era considerado um caçador muito ágil?",
+    "options": [
+      "Velociraptor",
+      "Braquiossauro",
+      "Triceratops",
+      "Estegossauro"
+    ],
+    "correctAnswer": "Velociraptor"
+  },
+  {
+    "question": "Os dinossauros viveram há aproximadamente quantos milhões de anos?",
+    "options": [
+      "65 a 230 milhões de anos",
+      "10 a 30 milhões de anos",
+      "500 milhões de anos",
+      "1 milhão de anos"
+    ],
+    "correctAnswer": "65 a 230 milhões de anos"
+  },
+  {
+    "question": "Qual destes dinossauros era um saurópode?",
+    "options": [
+      "Braquiossauro",
+      "Velociraptor",
+      "Tyrannosaurus rex",
+      "Carnotauro"
+    ],
+    "correctAnswer": "Braquiossauro"
+  },
+  {
+    "question": "Qual dinossauro tinha uma cauda usada como arma para defesa?",
+    "options": [
+      "Anquilossauro",
+      "Velociraptor",
+      "Carnotauro",
+      "Espinossauro"
+    ],
+    "correctAnswer": "Anquilossauro"
+  },
+  {
+    "question": "O nome 'Velociraptor' significa:",
+    "options": [
+      "Ladrão veloz",
+      "Lagarto gigante",
+      "Caçador noturno",
+      "Réptil alado"
+    ],
+    "correctAnswer": "Ladrão veloz"
+  },
+  {
+    "question": "Qual destes dinossauros podia atingir mais de 12 metros de comprimento?",
+    "options": [
+      "Tyrannosaurus rex",
+      "Compsognathus",
+      "Microraptor",
+      "Protoceratops"
+    ],
+    "correctAnswer": "Tyrannosaurus rex"
+  },
+  {
+    "question": "Qual destes dinossauros tinha um grande osso em forma de tubo na cabeça?",
+    "options": [
+      "Parasaurolophus",
+      "Carnotauro",
+      "Velociraptor",
+      "Anquilossauro"
+    ],
+    "correctAnswer": "Parasaurolophus"
+  },
+  {
+    "question": "Qual destes animais é considerado um descendente dos dinossauros?",
+    "options": [
+      "Galinhas",
+      "Jacarés",
+      "Tartarugas",
+      "Cobras"
+    ],
+    "correctAnswer": "Galinhas"
+  },
+  {
+    "question": "Qual era o maior grupo de dinossauros herbívoros de pescoço longo?",
+    "options": [
+      "Saurópodes",
+      "Terópodes",
+      "Ceratopsídeos",
+      "Anquilossauros"
+    ],
+    "correctAnswer": "Saurópodes"
+  },
+  {
+    "question": "Qual destes dinossauros possuía dois pequenos chifres acima dos olhos?",
+    "options": [
+      "Carnotauro",
+      "Estegossauro",
+      "Triceratops",
+      "Braquiossauro"
+    ],
+    "correctAnswer": "Carnotauro"
+  },
+  {
+    "question": "Qual cientista estuda fósseis de dinossauros?",
+    "options": [
+      "Astrônomo",
+      "Paleontólogo",
+      "Geógrafo",
+      "Meteorologista"
+    ],
+    "correctAnswer": "Paleontólogo"
+  }
+]
