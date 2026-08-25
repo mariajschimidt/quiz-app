@@ -1,74 +1,71 @@
-# Quiz de Dinossauros
+# 🏆 Quiz App - Dinossauros - [Maria Júllia Schimidt Ott Prestes]
 
-### Curso Técnico de Desenvolvimento de Sistemas - Senai Itapeva
+> Status do Projeto: Concluído ✔️
 
-**Descrição:**
+---
 
-O **Quiz de Dinossauros** é um aplicativo desenvolvido com **React Native** com o objetivo de testar e ampliar os conhecimentos dos usuários sobre dinossauros de forma divertida e interativa.
+### Tabela de Conteúdos
+* [Descrição do Projeto](#descrição-do-projeto)
+* [Demonstração da Aplicação](#demonstração-da-aplicação)
+* [Funcionalidades](#-funcionalidades)
+* [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+* [Como Rodar o Projeto Localmente](#-como-rodar-o-projeto-localmente)
+* [Funcionalidade Adicional](#-funcionalidade-adicional)
+* [Autor](#-autor)
 
-O aplicativo apresenta perguntas com diferentes alternativas de resposta. O usuário seleciona uma opção e, ao final do quiz, pode acompanhar sua **pontuação**, tornando a experiência mais dinâmica e educativa.
+---
 
-## Demonstração
+### Descrição do Projeto
+<p align="center">
+Este projeto é um aplicativo de Quiz com temática de expedição e dinossauros, desenvolvido em React Native com TypeScript e Expo. O aplicativo apresenta um questionário dinâmico com feedback instantâneo de respostas, animações de transição suaves, contagem regressiva por pergunta e sorteio aleatório de imagens temáticas a cada rodada.
+</p>
 
+---
+
+### Demonstração da Aplicação
 <div align="center">
   <video src="./iPhone-13-PRO-localhost-ncazsdm_bgad-9.webm" width="320" controls></video>
   <br>
   <sub><a href="./iPhone-13-PRO-localhost-ncazsdm_bgad-9.webm">Clique aqui para ver/baixar o vídeo da demonstração</a></sub>
 </div>
 
-## Índice
+---
 
-* [Demonstração](#demonstração)
-* [Funcionalidades](#funcionalidades)
-* [Tecnologias Utilizadas](#tecnologias-utilizadas)
-* [Estrutura do Projeto](#estrutura-do-projeto)
-* [Autores](#autores)
-* [Licença](#licença)
+### 🚀 Funcionalidades
 
-## Funcionalidades
+- **Quiz Interativo:** Fluxo de perguntas e respostas com validação de alternativas.
+- **Feedback Visual Instantâneo:** Respostas corretas e incorretas são destacadas com cores e opacidade distintas.
+- **Animações Suaves:** Transição fluida de *fade-in* ao carregar perguntas e exibição de modal de sobreposição (*overlay*).
+- **Imagens Dinâmicas:** Sorteio aleatório de imagens de dinossauros a cada nova pergunta.
+- **Temporizador Regressivo:** Limite de tempo (15 segundos) com aviso em vermelho quando o tempo está acabando.
+- **Placar de Acertos:** Contagem e exibição em tempo real da pontuação.
+- **Jogar Novamente / Reiniciar:** Possibilidade de reiniciar o quiz ao responder ou quando o tempo se esgotar.
+- **Funcionalidade Adicional:** Temporizador por pergunta com Game Over por tempo e imagens aleatórias.
 
-* Exibir perguntas sobre dinossauros.
-* Apresentar diferentes alternativas para cada pergunta.
-* Permitir que o usuário selecione uma resposta.
-* Verificar se a resposta selecionada está correta.
-* Contabilizar a pontuação do usuário.
-* Avançar para a próxima pergunta.
-* Desabilitar as alternativas após uma resposta ser selecionada.
-* Armazenar as perguntas e respostas em um arquivo JSON.
-* Exibir o resultado do quiz ao final.
+---
 
-## Tecnologias Utilizadas
+### 🛠️ Tecnologias Utilizadas
 
-* **Linguagem/Frameworks:**
+- **[React Native](https://reactnative.dev/)**
+- **[Expo](https://expo.dev/)**
+- **[TypeScript](https://www.typescriptlang.org/)**
+- **[React Native Safe Area Context](https://github.com/th3rdwave/react-native-safe-area-context)**
 
-  * React Native
-  * TypeScript
-  * Expo
-  * JavaScript/TypeScript
-  * JSON
+---
 
-* **Bibliotecas:**
+### ⚙️ Como Rodar o Projeto Localmente
 
-  * React
-  * React Native
-  * Expo Router
+```bash
+# 1. Clone o repositório
+$ git clone [https://github.com/mariajschimidt/quiz-app]
 
-## Estrutura do Projeto
+# 2. Navegue até o diretório do projeto
+$ cd quiz-app
 
-O projeto possui uma estrutura organizada para facilitar o desenvolvimento e a manutenção do aplicativo.
+# 3. Instale as dependências
+$ npm install
 
-* `components/` — contém os componentes utilizados no aplicativo.
-* `QuizScreen.tsx` — responsável pela tela principal do quiz.
-* `questions.json` — contém as perguntas, alternativas e respostas corretas.
-* `app/` — contém as telas e rotas da aplicação.
-* `assets/` — contém imagens e outros recursos utilizados no projeto.
+# 4. Inicie o servidor de desenvolvimento
+$ npm start
 
-## Autores
 
-Projeto desenvolvido pelos alunos do **Curso Técnico de Desenvolvimento de Sistemas - Senai Itapeva**.
-
-* **Maria Júllia Schimidt Ott Prestes** — GitHub: [mariajschimidt] — [maria.prestes.senai@gmail.com]
-
-## Licença
-
-Este projeto está licenciado sob a **Licença MIT** - veja o arquivo `LICENSE` para mais detalhes.
