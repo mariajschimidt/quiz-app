@@ -55,9 +55,9 @@ export default function ResultScreen({ score, totalQuestions, onPlayAgain }: Res
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5EFEB', // Fundo pergaminho
-    paddingHorizontal: 22,
-    paddingVertical: 18,
+    backgroundColor: '#F5EFEB',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
   },
   innerFrame: {
     flex: 1,
@@ -69,20 +69,21 @@ const styles = StyleSheet.create({
   },
   header: {
     alignItems: 'center',
+    marginTop: 8,
   },
   tag: {
     fontSize: 10,
     letterSpacing: 2,
     color: '#6B5A49',
     fontWeight: 'bold',
-    marginBottom: 4,
+    marginBottom: 6,
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
     color: '#261F18',
     textAlign: 'center',
-    marginBottom: 2,
+    marginBottom: 4,
   },
   subtitle: {
     fontSize: 12,
@@ -93,11 +94,9 @@ const styles = StyleSheet.create({
   imageContainer: {
     flex: 1,
     width: '100%',
-    minHeight: 100,
-    maxHeight: 160,
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 6,
+    marginVertical: 12,
   },
   image: {
     width: '100%',
@@ -111,13 +110,13 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderBottomWidth: 1,
     borderColor: '#3B3024',
-    paddingVertical: 8,
+    paddingVertical: 12,
     alignItems: 'center',
-    marginBottom: 10,
-    gap: 2,
+    marginBottom: 16,
+    gap: 4,
   },
   scoreNumber: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: 'bold',
     color: '#261F18',
   },
@@ -127,15 +126,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   feedbackText: {
-    fontSize: 11,
+    fontSize: 12,
     color: '#3B3024',
     textAlign: 'center',
-    marginTop: 3,
+    marginTop: 4,
     fontStyle: 'italic',
   },
   button: {
     backgroundColor: '#261F18',
-    paddingVertical: 12,
+    paddingVertical: 14,
     width: '100%',
     alignItems: 'center',
     borderWidth: 1,

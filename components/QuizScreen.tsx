@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Image } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Image, Animated } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 type Question = {
@@ -18,7 +19,17 @@ type QuizScreenProps = {
   onNextQuestion: () => void;
 };
 
-export default function QuizScreenTeste({
+const INITIAL_TIME = 15;
+
+// 🎓 Mapeamento estático das imagens de dinossauros
+const DINO_IMAGES = [
+  require('../assets/img/dinossauro1.png'),
+  require('../assets/img/dinossauro2.png'),
+  require('../assets/img/dinossauro3.png'),
+  require('../assets/img/dinossauro4.png'),
+];
+
+export default function QuizScreen({
   currentQuestion,
   currentIndex,
   totalQuestions,
@@ -28,6 +39,59 @@ export default function QuizScreenTeste({
   onOptionPress,
   onNextQuestion,
 }: QuizScreenProps) {
+
+  const [timeLeft, setTimeLeft] = useState(INITIAL_TIME);
+  
+  // 🎓 Estado para armazenar a imagem sorteada atual
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const overlayFadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    setTimeLeft(INITIAL_TIME);
+
+    // 🎓 Sortear uma imagem aleatória a cada mudança de pergunta
+    const randomIndex = Math.floor(Math.random() * DINO_IMAGES.length);
+    setCurrentImageIndex(randomIndex);
+
+    fadeAnim.setValue(0);
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 400,
+      useNativeDriver: true,
+    }).start();
+
+    const timer = setInterval(() => {
+      setTimeLeft((prevTime) => {
+        if (prevTime <= 1) {
+          clearInterval(timer);
+          return 0;
+        }
+        return prevTime - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [currentIndex]);
+
+  useEffect(() => {
+    if (timeLeft === 0 && !selectedOption && !isOptionsDisabled) {
+      onOptionPress('');
+    }
+  }, [timeLeft, selectedOption, isOptionsDisabled]);
+
+  useEffect(() => {
+    if (selectedOption) {
+      Animated.timing(overlayFadeAnim, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
+    } else {
+      overlayFadeAnim.setValue(0);
+    }
+  }, [selectedOption]);
 
   const getOptionStyle = (option: string) => {
     if (selectedOption) {
@@ -55,50 +119,62 @@ export default function QuizScreenTeste({
       >
         <View style={styles.innerFrame}>
         
-          <View style={styles.topSection}>
+          <Animated.View style={[styles.topSection, { opacity: fadeAnim }]}>
             <View style={styles.headerRow}>
               <Text style={styles.tag}>✦ QUESTÃO {currentIndex} DE {totalQuestions} ✦</Text>
-              <Text style={styles.scoreCounter}>Acertos: {score}</Text>
+
+              <View style={styles.statusGroup}>
+                <Text style={[styles.timerText, timeLeft <= 5 && styles.timerWarning]}>
+                  ⏱ {timeLeft}s
+                </Text>
+                <Text style={styles.scoreCounter}>Acertos: {score}</Text>
+              </View>
             </View>
             
             <View style={styles.questionContainer}>
               <Text style={styles.questionText}>{currentQuestion.question}</Text>
             </View>
-          </View>
+          </Animated.View>
 
-          <View style={styles.imageContainer}>
+          <Animated.View style={[styles.imageContainer, { opacity: fadeAnim }]}>
             <Image
-              source={require('../assets/img/dinossauro1.png')}
+              source={DINO_IMAGES[currentImageIndex]}
               style={styles.image}
               resizeMode="contain"
             />
-          </View>
+          </Animated.View>
 
-          <View style={styles.bottomSection}>
+          <Animated.View style={[styles.bottomSection, { opacity: fadeAnim }]}>
             <View style={styles.optionsContainer}>
               {currentQuestion.options.map((option, index) => (
                 <TouchableOpacity
                   key={option}
                   style={[styles.option, getOptionStyle(option)]}
                   onPress={() => onOptionPress(option)}
-                  disabled={isOptionsDisabled}
+                  disabled={isOptionsDisabled || selectedOption !== null}
                   activeOpacity={0.7}
                 >
                   <Text style={[styles.optionText, getOptionTextStyle(option)]}>
-                    {String.fromCharCode(65 + index)}.  {option}
+                    {String.fromCharCode(65 + index)}. {option}
                   </Text>
                 </TouchableOpacity>
               ))}
             </View>
+          </Animated.View>
 
-            {selectedOption && (
-              <TouchableOpacity style={styles.nextButton} onPress={onNextQuestion} activeOpacity={0.8}>
+          {selectedOption && (
+            <Animated.View style={[styles.overlayContainer, { opacity: overlayFadeAnim }]}>
+              {timeLeft === 0 && (
+                <Text style={styles.timeOutBadge}>TEMPO ESGOTADO!</Text>
+              )}
+
+              <TouchableOpacity style={styles.nextButton} onPress={onNextQuestion} activeOpacity={0.85}>
                 <Text style={styles.nextButtonText}>
                   {currentIndex === totalQuestions ? 'VER RESULTADO ➔' : 'PRÓXIMA PERGUNTA ➔'}
                 </Text>
               </TouchableOpacity>
-            )}
-          </View>
+            </Animated.View>
+          )}
 
         </View>
       </ScrollView>
@@ -113,17 +189,19 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     flexGrow: 1,
-    paddingHorizontal: 22,
-    paddingVertical: 18,
+    paddingHorizontal: 15,
+    paddingVertical: 14,
   },
   innerFrame: {
     flex: 1,
     borderWidth: 1.5,
     borderColor: '#3B3024',
-    padding: 14,
+    paddingHorizontal: 20,
+    paddingTop: 35,
+    paddingBottom: 20,
     backgroundColor: '#FAF7F0',
     justifyContent: 'space-between',
-    minHeight: '100%',
+    position: 'relative',
   },
   topSection: {
     width: '100%',
@@ -132,16 +210,30 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 6,
+    marginBottom: 14,
     borderBottomWidth: 1,
     borderBottomColor: '#D8CEBE',
-    paddingBottom: 4,
+    paddingBottom: 8,
   },
   tag: {
     fontSize: 10,
     letterSpacing: 1.2,
     color: '#6B5A49',
     fontWeight: 'bold',
+  },
+  statusGroup: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  timerText: {
+    fontSize: 11,
+    fontWeight: 'bold',
+    color: '#8B4513',
+  },
+  timerWarning: {
+    color: '#D9381E',
+    fontWeight: '900',
   },
   scoreCounter: {
     fontSize: 11,
@@ -150,22 +242,21 @@ const styles = StyleSheet.create({
   },
   questionContainer: {
     paddingVertical: 4,
+    paddingTop: 15,
   },
   questionText: {
-    fontSize: 15,
+    fontSize: 17,
     fontWeight: 'bold',
     color: '#261F18',
     textAlign: 'center',
-    lineHeight: 20,
+    lineHeight: 22,
   },
   imageContainer: {
     width: '100%',
-    minHeight: 80,
-    maxHeight: 135,
-    flex: 1,
+    height: 160,
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 4,
+    marginVertical: 12,
   },
   image: {
     width: '100%',
@@ -175,13 +266,12 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   optionsContainer: {
-    gap: 6,
-    marginBottom: 4,
+    gap: 10,
   },
   option: {
     backgroundColor: '#FAF7F0',
-    paddingVertical: 10,
-    paddingHorizontal: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 14,
     borderWidth: 1.2,
     borderColor: '#3B3024',
   },
@@ -206,18 +296,42 @@ const styles = StyleSheet.create({
     color: '#5C1D17',
     fontWeight: 'bold',
   },
-  nextButton: {
-    backgroundColor: '#261F18',
-    paddingVertical: 11,
+  overlayContainer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(38, 31, 24, 0.65)',
+    justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 6,
-    borderWidth: 1,
+    paddingHorizontal: 25,
+  },
+  timeOutBadge: {
+    color: '#FAF7F0',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 14,
+    letterSpacing: 1,
+  },
+  nextButton: {
+    backgroundColor: '#FAF7F0',
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+    width: '100%',
+    alignItems: 'center',
+    borderWidth: 2,
     borderColor: '#3B3024',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
   },
   nextButtonText: {
-    color: '#FAF7F0',
-    fontSize: 13,
+    color: '#261F18',
+    fontSize: 14,
     fontWeight: 'bold',
-    letterSpacing: 1,
+    letterSpacing: 1.2,
   },
 });
