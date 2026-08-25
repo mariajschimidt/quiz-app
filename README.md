@@ -8,13 +8,22 @@ O **Quiz de Dinossauros** é um aplicativo desenvolvido com **React Native** com
 
 O aplicativo apresenta perguntas com diferentes alternativas de resposta. O usuário seleciona uma opção e, ao final do quiz, pode acompanhar sua **pontuação**, tornando a experiência mais dinâmica e educativa.
 
+## Demonstração
+
+<div align="center">
+  <video src="./iPhone-13-PRO-localhost-ncazsdm_bgad-9.webm" width="320" controls></video>
+  <br>
+  <sub><a href="./iPhone-13-PRO-localhost-ncazsdm_bgad-9.webm">Clique aqui para ver/baixar o vídeo da demonstração</a></sub>
+</div>
+
 ## Índice
 
-* Funcionalidades
-* Tecnologias Utilizadas
-* Estrutura do Projeto
-* Autores
-* Licença
+* [Demonstração](#demonstração)
+* [Funcionalidades](#funcionalidades)
+* [Tecnologias Utilizadas](#tecnologias-utilizadas)
+* [Estrutura do Projeto](#estrutura-do-projeto)
+* [Autores](#autores)
+* [Licença](#licença)
 
 ## Funcionalidades
 
