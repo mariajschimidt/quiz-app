@@ -19,6 +19,7 @@ export default function HomePage() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isOptionsDisabled, setIsOptionsDisabled] = useState(false);
   const [score, setScore] = useState(0);
+  const [quizSession, setQuizSession] = useState(0);
 
   const currentQuestion = quizQuestions[currentQuestionIndex];
 
@@ -29,6 +30,7 @@ export default function HomePage() {
     setIsOptionsDisabled(false);
     setScore(0);
     setTela('quiz');
+    setQuizSession((prev) => prev + 1);
   };
 
   const handleOptionPress = (option: string) => {
@@ -53,6 +55,10 @@ export default function HomePage() {
     setTela('home');
   };
 
+  const handleRestartQuiz = () => {
+    handleStart();
+  };
+
   // Renderização de cada tela
   if (tela === 'home') {
     return <HomeScreen onStart={handleStart} />;
@@ -70,6 +76,7 @@ export default function HomePage() {
 
   return (
     <QuizScreenTeste
+      key={`${quizSession}-${currentQuestionIndex}`}
       currentQuestion={currentQuestion}
       currentIndex={currentQuestionIndex + 1}
       totalQuestions={quizQuestions.length}
@@ -78,6 +85,7 @@ export default function HomePage() {
       isOptionsDisabled={isOptionsDisabled}
       onOptionPress={handleOptionPress}
       onNextQuestion={handleNextQuestion}
+      onRestartQuiz={handleRestartQuiz}
     />
   );
 }

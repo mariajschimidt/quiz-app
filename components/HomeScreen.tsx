@@ -11,12 +11,11 @@ export default function HomeScreen({ onStart }: HomeScreenProps) {
       <View style={styles.innerFrame}>
         
         <View style={styles.header}>
-          <Text style={styles.tag}>✦ ESTUDO PALEONTOLÓGICO ✦</Text>
+          <Text style={styles.tag}>ESTUDO PALEONTOLÓGICO</Text>
           <Text style={styles.title}>QUIZ DE{'\n'}DINOSSAUROS</Text>
           <Text style={styles.subtitle}>Arquivo de Espécimes & Fósseis</Text>
         </View>
 
-        {/* Usamos flex: 1 para o container da imagem se adaptar ao espaço livre */}
         <View style={styles.imageContainer}>
           <Image
             source={require('../assets/img/dinossauro1.png')}
@@ -24,19 +23,11 @@ export default function HomeScreen({ onStart }: HomeScreenProps) {
             resizeMode="contain"
           />
         </View>
-
         <View style={styles.bottomSection}>
-          <View style={styles.infoCard}>
-            <Text style={styles.infoText}>• 10 Perguntas Sorteadas</Text>
-            <Text style={styles.infoText}>• Fósseis & Anatomia</Text>
-            <Text style={styles.infoText}>• Teste seus Conhecimentos</Text>
-          </View>
-
           <TouchableOpacity style={styles.button} onPress={onStart} activeOpacity={0.8}>
             <Text style={styles.buttonText}>INICIAR EXPEDIÇÃO</Text>
           </TouchableOpacity>
         </View>
-
       </View>
     </SafeAreaView>
   );

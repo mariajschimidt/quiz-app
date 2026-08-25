@@ -17,11 +17,11 @@ type QuizScreenProps = {
   isOptionsDisabled: boolean;
   onOptionPress: (option: string) => void;
   onNextQuestion: () => void;
+  onRestartQuiz: () => void; 
 };
 
-const INITIAL_TIME = 15;
+const INITIAL_TIME = 10;
 
-// 🎓 Mapeamento estático das imagens de dinossauros
 const DINO_IMAGES = [
   require('../assets/img/dinossauro1.png'),
   require('../assets/img/dinossauro2.png'),
@@ -38,11 +38,10 @@ export default function QuizScreen({
   isOptionsDisabled,
   onOptionPress,
   onNextQuestion,
+  onRestartQuiz, 
 }: QuizScreenProps) {
 
   const [timeLeft, setTimeLeft] = useState(INITIAL_TIME);
-  
-  // 🎓 Estado para armazenar a imagem sorteada atual
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -51,7 +50,6 @@ export default function QuizScreen({
   useEffect(() => {
     setTimeLeft(INITIAL_TIME);
 
-    // 🎓 Sortear uma imagem aleatória a cada mudança de pergunta
     const randomIndex = Math.floor(Math.random() * DINO_IMAGES.length);
     setCurrentImageIndex(randomIndex);
 
@@ -76,13 +74,13 @@ export default function QuizScreen({
   }, [currentIndex]);
 
   useEffect(() => {
-    if (timeLeft === 0 && !selectedOption && !isOptionsDisabled) {
-      onOptionPress('');
+    if (timeLeft === 0 && selectedOption === null && !isOptionsDisabled) {
+      onOptionPress('__TIMEOUT__');
     }
   }, [timeLeft, selectedOption, isOptionsDisabled]);
 
   useEffect(() => {
-    if (selectedOption) {
+    if (selectedOption !== null) {
       Animated.timing(overlayFadeAnim, {
         toValue: 1,
         duration: 300,
@@ -94,7 +92,7 @@ export default function QuizScreen({
   }, [selectedOption]);
 
   const getOptionStyle = (option: string) => {
-    if (selectedOption) {
+    if (selectedOption !== null) {
       const isCorrect = option === currentQuestion.correctAnswer;
       if (isCorrect) return styles.correctOption;
       if (option === selectedOption && !isCorrect) return styles.incorrectOption;
@@ -103,12 +101,14 @@ export default function QuizScreen({
   };
 
   const getOptionTextStyle = (option: string) => {
-    if (selectedOption) {
+    if (selectedOption !== null) {
       if (option === currentQuestion.correctAnswer) return styles.correctText;
       if (option === selectedOption) return styles.incorrectText;
     }
     return {};
   };
+
+  const isTimeOut = timeLeft === 0 || selectedOption === '__TIMEOUT__';
 
   return (
     <SafeAreaView style={styles.container} edges={['top', 'bottom', 'left', 'right']}>
@@ -121,7 +121,7 @@ export default function QuizScreen({
         
           <Animated.View style={[styles.topSection, { opacity: fadeAnim }]}>
             <View style={styles.headerRow}>
-              <Text style={styles.tag}>✦ QUESTÃO {currentIndex} DE {totalQuestions} ✦</Text>
+              <Text style={styles.tag}>QUESTÃO {currentIndex} DE {totalQuestions}</Text>
 
               <View style={styles.statusGroup}>
                 <Text style={[styles.timerText, timeLeft <= 5 && styles.timerWarning]}>
@@ -162,17 +162,28 @@ export default function QuizScreen({
             </View>
           </Animated.View>
 
-          {selectedOption && (
+          {selectedOption !== null && (
             <Animated.View style={[styles.overlayContainer, { opacity: overlayFadeAnim }]}>
-              {timeLeft === 0 && (
-                <Text style={styles.timeOutBadge}>TEMPO ESGOTADO!</Text>
+              {isTimeOut ? (
+                <View style={styles.timeOutContent}>
+                  <Text style={styles.timeOutBadge}>TEMPO ESGOTADO!</Text>
+                  <TouchableOpacity 
+                    style={[styles.nextButton, styles.restartButton]} 
+                    onPress={onRestartQuiz} 
+                    activeOpacity={0.85}
+                  >
+                    <Text style={[styles.nextButtonText, styles.restartButtonText]}>
+                      ↺ REINICIAR QUIZ
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              ) : (
+                <TouchableOpacity style={styles.nextButton} onPress={onNextQuestion} activeOpacity={0.85}>
+                  <Text style={styles.nextButtonText}>
+                    {currentIndex === totalQuestions ? 'VER RESULTADO ➔' : 'PRÓXIMA PERGUNTA ➔'}
+                  </Text>
+                </TouchableOpacity>
               )}
-
-              <TouchableOpacity style={styles.nextButton} onPress={onNextQuestion} activeOpacity={0.85}>
-                <Text style={styles.nextButtonText}>
-                  {currentIndex === totalQuestions ? 'VER RESULTADO ➔' : 'PRÓXIMA PERGUNTA ➔'}
-                </Text>
-              </TouchableOpacity>
             </Animated.View>
           )}
 
@@ -307,12 +318,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 25,
   },
+  timeOutContent: {
+    width: '100%',
+    alignItems: 'center',
+  },
   timeOutBadge: {
     color: '#FAF7F0',
     fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 14,
-    letterSpacing: 1,
+    marginBottom: 16,
+    letterSpacing: 1.2,
   },
   nextButton: {
     backgroundColor: '#FAF7F0',
@@ -333,5 +348,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
     letterSpacing: 1.2,
+  },
+  restartButton: {
+    backgroundColor: '#94382E', 
+    borderColor: '#FAF7F0',
+  },
+  restartButtonText: {
+    color: '#FAF7F0',
   },
 });

@@ -22,7 +22,7 @@ export default function ResultScreen({ score, totalQuestions, onPlayAgain }: Res
       <View style={styles.innerFrame}>
 
         <View style={styles.header}>
-          <Text style={styles.tag}>✦ RELATÓRIO FINAL ✦</Text>
+          <Text style={styles.tag}>RELATÓRIO FINAL</Text>
           <Text style={styles.title}>EXPEDIÇÃO CONCLUÍDA</Text>
           <Text style={styles.subtitle}>Avaliação Paleontológica</Text>
         </View>
